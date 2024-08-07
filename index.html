@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Tools</title>
+    <link rel="icon" href="https://static-00.iconduck.com/assets.00/qr-scan-icon-2048x2048-aeh36n7y.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGxhbmRzY2FwZSUyMGRhcmt8ZW58MHx8MHx8fDA%3D') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-y: auto; /* Allow vertical scroll */
+        }
+        .blur-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: blur(20px);
+            z-index: -1;
+        }
+        .navbar {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            border-radius: 25px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            margin-top: 1em;
+    
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .navbar img {
+            height: 50px;
+            margin-right: 20px;
+        }
+        .navbar .navbar-content {
+            flex: 1; /* Allow content to take available space */
+            text-align: center;
+        }
+        .navbar a {
+            text-decoration: none;
+            font-family: 'Lobster', cursive;
+            font-size: 32px;
+            color: #4e54c8;
+        }
+        .navbar a:hover {
+            color: #8f94fb;
+        }
+        .card-container {
+            display: flex;
+            
+            flex-direction: column;
+            align-items: center;    
+            justify-content: center;
+            min-height: 100vh;
+            padding: 0px 20px 20px;
+        }
+        .card-row {
+            display: flex;
+            flex-wrap: wrap; /* Wrap to the next line on smaller screens */
+            justify-content: center;
+            gap: 20px; /* Space between cards */
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 360px;
+            width: 300px;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        .card img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            margin: 15px 0;
+            font-size: 24px;
+            color: #4e54c8;
+            font-weight: 700;
+        }
+        .card p {
+            font-size: 18px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px;
+            }
+            .navbar img {
+                height: 40px;
+                margin-right: 10px;
+            }
+            .navbar a {
+                font-size: 28px;
+            }
+            .card {
+                max-width: 90%;
+                padding: 20px;
+                margin: 10px;
+            }
+            .card h3 {
+                font-size: 22px;
+            }
+            .card img {
+                width: 70px;
+            }
+        }
+        @media (max-width: 480px) {
+            .navbar a {
+                font-size: 22px;
+            }
+            .card {
+                max-width: 100%;
+                padding: 15px;
+                margin: 5px;
+            }
+            .card h3 {
+                font-size: 20px;
+            }
+            .card img {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blur-background"></div>
+    <div class="navbar">
+        <img src="https://img.freepik.com/premium-vector/scan-me-icon-with-qr-code-inscription-scan-me-qr-code-label_123447-5215.jpg" alt="Scan Me Logo">
+        <div class="navbar-content">
+            <a href="#home">QR Tools</a>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card-row">
+            <div class="card" onclick="window.location.href='qr_reader.html';">
+                <img src="https://static-00.iconduck.com/assets.00/qr-scan-icon-2048x2048-aeh36n7y.png" alt="QR Reader">
+                <h3>QR Reader</h3>
+                <p>Scan QR codes with your camera or upload an image.</p>
+            </div>
+            <div class="card" onclick="window.location.href='qr_generator.html';">
+                <img src="https://static-00.iconduck.com/assets.00/qr-scan-icon-2048x2048-aeh36n7y.png" alt="QR Generator">
+                <h3>QR Generator</h3>
+                <p>Generate QR codes from URLs or text.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
